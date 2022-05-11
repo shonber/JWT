@@ -5,7 +5,7 @@ require_once 'SignatureInvalidException.php';
 require_once 'JWT.php';
 use \Firebase\JWT\JWT;
 
-$public_key = file_get_contents('keys/private.pem');
+$private_key = file_get_contents('keys/private.pem');
 
 echo JWT::encode(array(
 	# Issuer
@@ -17,7 +17,8 @@ echo JWT::encode(array(
 	# Expire
 	"exp" => time() + 120,
 	
+	# Data
 	"data" => [
 		"name" => "admin"
 	]
-), $public_key, 'RS256');
+), $private_key, 'RS256');
