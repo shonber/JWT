@@ -9,7 +9,7 @@ $key = 'secret';
 
 echo JWT::encode(array(
 	# Issuer
-	"iss" => "https://www.itsafe.co.il",
+	"iss" => "https://www.example..com",
 	
 	# Issued at
 	"iat" => time(),
